@@ -6,8 +6,12 @@ In this project you will find a Unity scene with the zombunny 3D model from Unit
 There are simple properties exploration, textures manipulation, lighting models, rim lighting, silhouette outlines, etc.
 
 ---
+## Useful imports
+- [Unity HDRI](https://assetstore.unity.com/packages/essentials/beta-projects/unity-hdri-pack-72511), this asset package contains cubemap textures and others useful to see the result of certain shaders.
 
-# Cool References
+---
+
+## Cool References
 - [Catlike C# and Shader Tutorials](https://catlikecoding.com/unity/tutorials/?fbclid=IwAR2HaODbCqZyZnI6-DtvP_HX2gE6te61sQKLySlTafv_RhvhbSpcc81oAls)
 
 - [Concise Cg built-in function table](https://www.sjbaker.org/wiki/index.php?title=Concise_Cg_built-in_function_table)

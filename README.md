@@ -14,6 +14,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 ## Cool References
 - [Catlike C# and Shader Tutorials](https://catlikecoding.com/unity/tutorials/?fbclid=IwAR2HaODbCqZyZnI6-DtvP_HX2gE6te61sQKLySlTafv_RhvhbSpcc81oAls)
 
+- [Making Stuff look good in Video Games Youtube Channel](https://www.youtube.com/channel/UCEklP9iLcpExB8vp_fWQseg)
+
 - [Concise Cg built-in function table](https://www.sjbaker.org/wiki/index.php?title=Concise_Cg_built-in_function_table)
 
 - [Unity Shader Documentation](https://docs.unity3d.com/Manual/SL-SurfaceShaders.html)

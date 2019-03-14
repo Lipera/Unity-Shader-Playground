@@ -17,3 +17,5 @@ There are simple properties exploration, textures manipulation, lighting models,
 - [Concise Cg built-in function table](https://www.sjbaker.org/wiki/index.php?title=Concise_Cg_built-in_function_table)
 
 - [Unity Shader Documentation](https://docs.unity3d.com/Manual/SL-SurfaceShaders.html)
+
+- [How to create alphamaps Unity documentation](https://docs.unity3d.com/Manual/HOWTO-alphamaps.html)

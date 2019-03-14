@@ -24,6 +24,7 @@
 
                 half4 c;
                 c.rgb = (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * spec) * atten;
+                //c.rgb = (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * spec) * atten * _SinTime; //Effect for challenge 4, _SinTime is a built-in variable that changes values between 0 and 1 overtime during application runtime
                 c.a = s.Alpha;
                 return c;
             }

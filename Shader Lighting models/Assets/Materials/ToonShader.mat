@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HelloShader
-  m_Shader: {fileID: 4800000, guid: e287b6682263b4544a71fc9a0825c407, type: 3}
+  m_Name: ToonShader
+  m_Shader: {fileID: 4800000, guid: e99da76937e6e664a906bbf0bce972ed, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

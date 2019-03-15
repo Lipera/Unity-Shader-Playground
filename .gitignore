@@ -6,6 +6,8 @@
 Assets/AssetStoreTools*
 */Assets/UnityHDRI*
 */Assets/JMO Assets*
+*/Assets/SampleScenes*
+*/Assets/Standard Assets* 
 
 # Visual Studio cache directory
 .vs/

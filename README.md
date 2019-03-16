@@ -1,7 +1,7 @@
 # Unity-Shader-Playground
 This is my first look at shader manipulation in Unity.
 
-In this project you will find a Unity scene with the zombunny 3D model from Unity's [Survival Shooter Tutorial](https://unity3d.com/learn/tutorials/s/survival-shooter-tutorial) and few custom shaders I developed while following Penny de Byl's [course](https://www.udemy.com/unity-shaders/learn/v4/overview) in Udemy.
+In this project you will find a Unity scene with the zombunny 3D model from Unity's [Survival Shooter Tutorial](https://unity3d.com/learn/tutorials/s/survival-shooter-tutorial) and a few custom shaders I developed while following Penny de Byl's [course](https://www.udemy.com/unity-shaders/learn/v4/overview) in Udemy.
 
 There are simple properties exploration, textures manipulation, lighting models, rim lighting, silhouette outlines, etc.
 
@@ -16,6 +16,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 - [Catlike C# and Shader Tutorials](https://catlikecoding.com/unity/tutorials/?fbclid=IwAR2HaODbCqZyZnI6-DtvP_HX2gE6te61sQKLySlTafv_RhvhbSpcc81oAls)
 
 - [Making Stuff look good in Video Games Youtube Channel](https://www.youtube.com/channel/UCEklP9iLcpExB8vp_fWQseg)
+
+- [Repository with all sorts of references](https://github.com/sindresorhus/awesome)
 
 - [Toon Shader Tutorial from Roystan](https://roystan.net/articles/toon-shader.html)
 

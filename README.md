@@ -17,9 +17,9 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Making Stuff look good in Video Games Youtube Channel](https://www.youtube.com/channel/UCEklP9iLcpExB8vp_fWQseg)
 
-- [Repository with all sorts of references](https://github.com/sindresorhus/awesome)
-
 - [Toon Shader Tutorial from Roystan](https://roystan.net/articles/toon-shader.html)
+
+- [Repository with all sorts of references](https://github.com/sindresorhus/awesome)
 
 - [Concise Cg built-in function table](https://www.sjbaker.org/wiki/index.php?title=Concise_Cg_built-in_function_table)
 

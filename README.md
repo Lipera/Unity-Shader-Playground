@@ -7,8 +7,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 ---
 ## Useful imports
-- [Unity HDRI](https://assetstore.unity.com/packages/essentials/beta-projects/unity-hdri-pack-72511), this asset package contains cubemap textures and others useful materials to see the result of certain shaders.
-- [Unity Standard Assets](https://assetstore.unity.com/packages/essentials/asset-packs/standard-assets-32351), I used a few more complex 3D models from this package to test my shaders.
+- [Unity HDRI](https://assetstore.unity.com/packages/essentials/beta-projects/unity-hdri-pack-72511): this asset package contains cubemap textures and others useful materials to see the result of certain shaders.
+- [Unity Standard Assets](https://assetstore.unity.com/packages/essentials/asset-packs/standard-assets-32351): I used a few more complex 3D models from this package to test my shaders.
 
 ---
 

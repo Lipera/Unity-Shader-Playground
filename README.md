@@ -17,6 +17,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Catlike C# and Shader Tutorials](https://catlikecoding.com/unity/tutorials/?fbclid=IwAR2HaODbCqZyZnI6-DtvP_HX2gE6te61sQKLySlTafv_RhvhbSpcc81oAls)
 
+- [Febucci Unity Shader Tutorials and misc](https://www.febucci.com/tutorials/)
+
 - [List of shader effects and how to implement them](http://www.shaderslab.com/shaders.html)
 
 - [Making Stuff look good in Video Games Youtube Channel](https://www.youtube.com/channel/UCEklP9iLcpExB8vp_fWQseg)

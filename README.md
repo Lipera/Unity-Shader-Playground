@@ -27,6 +27,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Toon Shader Tutorial from Roystan](https://roystan.net/articles/toon-shader.html)
 
+- [Linden Reid's Game Dev Portfolio Guide](https://lindenreid.wordpress.com/)
+
 - [Repository with all sorts of references](https://github.com/sindresorhus/awesome)
 
 - [Concise Cg built-in function table](https://www.sjbaker.org/wiki/index.php?title=Concise_Cg_built-in_function_table)

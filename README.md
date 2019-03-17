@@ -23,6 +23,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Making Stuff look good in Video Games Youtube Channel](https://www.youtube.com/channel/UCEklP9iLcpExB8vp_fWQseg)
 
+- [Technical Artist Chayan Vinayak Youtube Channel](https://www.youtube.com/channel/UCwtWCujRCWK9ba3f474sTOQ)
+
 - [Toon Shader Tutorial from Roystan](https://roystan.net/articles/toon-shader.html)
 
 - [Repository with all sorts of references](https://github.com/sindresorhus/awesome)

@@ -13,26 +13,35 @@ There are simple properties exploration, textures manipulation, lighting models,
 ---
 
 ## Cool References
-- [Unity List](https://unitylist.com/)
+
+- [3D Math Primer For Graphics and Game Development](https://www.amazon.com/Primer-Graphics-Development-Wordware-Library/dp/1556229119)
+
+- [Alan Zucconi](https://www.alanzucconi.com/)
 
 - [Catlike C# and Shader Tutorials](https://catlikecoding.com/unity/tutorials/?fbclid=IwAR2HaODbCqZyZnI6-DtvP_HX2gE6te61sQKLySlTafv_RhvhbSpcc81oAls)
 
+- [Concise Cg built-in function table](https://www.sjbaker.org/wiki/index.php?title=Concise_Cg_built-in_function_table)
+
 - [Febucci Unity Shader Tutorials and misc](https://www.febucci.com/tutorials/)
+
+- [GPU Gems](https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch01.html)
+
+- [Linden Reid's Game Developnebt Portfolio Guide](https://lindenreid.wordpress.com/)
 
 - [List of shader effects and how to implement them](http://www.shaderslab.com/shaders.html)
 
-- [Making Stuff look good in Video Games Youtube Channel](https://www.youtube.com/channel/UCEklP9iLcpExB8vp_fWQseg)
+- [Making Stuff look Good Youtube Channel](https://www.youtube.com/channel/UCEklP9iLcpExB8vp_fWQseg)
 
-- [Technical Artist Chayan Vinayak Youtube Channel](https://www.youtube.com/channel/UCwtWCujRCWK9ba3f474sTOQ)
-
-- [Toon Shader Tutorial from Roystan](https://roystan.net/articles/toon-shader.html)
-
-- [Linden Reid's Game Dev Portfolio Guide](https://lindenreid.wordpress.com/)
+- [Real-Time Rendering](http://www.realtimerendering.com/book.html)
 
 - [Repository with all sorts of references](https://github.com/sindresorhus/awesome)
 
-- [Concise Cg built-in function table](https://www.sjbaker.org/wiki/index.php?title=Concise_Cg_built-in_function_table)
+- [Technical Artist Chayan Vinayak Youtube Channel](https://www.youtube.com/channel/UCwtWCujRCWK9ba3f474sTOQ)
+
+- [The Book of Shaders](https://thebookofshaders.com/)
+
+- [Toon Shader Tutorial from Roystan](https://roystan.net/articles/toon-shader.html)
+
+- [Unity List](https://unitylist.com/)
 
 - [Unity Shader Documentation](https://docs.unity3d.com/Manual/SL-SurfaceShaders.html)
-
-- [How to create alphamaps Unity documentation](https://docs.unity3d.com/Manual/HOWTO-alphamaps.html)

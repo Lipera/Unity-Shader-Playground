@@ -3,6 +3,8 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _ShadowCol ("Received Shadow Color", Color) = (0,0,0,1)
+        _ShadowInt ("Shadow Intensity", Range(0,1)) = 0.8
     }
     SubShader
     {
@@ -50,13 +52,17 @@
                 }
 
                 sampler2D _MainTex;
+                float4 _ShadowCol;
+                half _ShadowInt;
 
                 fixed4 frag (v2f i) : SV_Target
                 {
                     // sample the texture
-                    fixed4 col = tex2D(_MainTex, i.uv);
+                    fixed4 col = tex2D(_MainTex, i.uv) * i.diff;
                     fixed shadow = SHADOW_ATTENUATION(i);
-                    col *= i.diff * shadow;
+                    //Weight to smooth shadow edges
+                    fixed lerpWeight = min(_ShadowInt, 1 - shadow);
+                    col.rgb = lerp(col.rgb, _ShadowCol, lerpWeight);
                     return col;
                 }
             ENDCG

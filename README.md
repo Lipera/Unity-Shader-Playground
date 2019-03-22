@@ -26,7 +26,7 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [GPU Gems](https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch01.html)
 
-- [Linden Reid's Game Developnebt Portfolio Guide](https://lindenreid.wordpress.com/)
+- [Linden Reid's Game Development Portfolio Guide](https://lindenreid.wordpress.com/)
 
 - [List of shader effects and how to implement them](http://www.shaderslab.com/shaders.html)
 

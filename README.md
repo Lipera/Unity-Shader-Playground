@@ -22,6 +22,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Concise Cg built-in function table](https://www.sjbaker.org/wiki/index.php?title=Concise_Cg_built-in_function_table)
 
+- [Desmos Graph](https://www.desmos.com/calculator) for visualizing functions in a graph
+
 - [Febucci Unity Shader Tutorials and misc](https://www.febucci.com/tutorials/)
 
 - [GPU Gems](https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch01.html)

@@ -42,6 +42,7 @@
                 vertexOutput vert(vertexInput v) 
                 {
                     vertexOutput o;
+                    UNITY_INITIALIZE_OUTPUT(vertexOutput, o); //necessary for HLSL compilers
                     //o.pos = mul(UNITY_MATRIX_MVP, v.vertex); //this method is obsolete and couls not support all graph API's
                     o.pos = UnityObjectToClipPos(v.vertex);
                     o.texcoord.xy = (v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw); //x and y coordinates are for tilling. z and w coordinates are for offseting

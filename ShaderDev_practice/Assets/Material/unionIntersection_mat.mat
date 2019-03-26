@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: line_mat
-  m_Shader: {fileID: 4800000, guid: 1f40b227e0102f245971942c23df229f, type: 3}
+  m_Name: unionIntersection_mat
+  m_Shader: {fileID: 4800000, guid: d1122a7bdf61d67449206523fbce0efd, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -70,7 +70,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Start: 0.5
+    - _Start: 0.45
     - _UVSec: 0
     - _Width: 0.1
     - _ZWrite: 1

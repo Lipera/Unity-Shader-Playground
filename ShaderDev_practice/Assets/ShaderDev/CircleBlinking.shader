@@ -1,4 +1,4 @@
-﻿Shader "ShaderDev/07CircleFade"  {
+﻿Shader "ShaderDev/08CircleBlinking"  {
 
     Properties {
         _Color ("Main Color", Color) = (1,1,1,1)
@@ -6,6 +6,8 @@
         _Center ("Center, only first 2 coord", Vector) = (0.5,0.5,0,0)
         _Radius ("Radius", Float) = 0.5
         _Feather ("Feather", Range(0.001, 0.5)) = 0.2
+        _Speed ("Speed", Float) = 1.0
+        _Bloom ("Bloom Strength", Float) = 1.0
     }
 
     SubShader {
@@ -28,6 +30,8 @@
                 uniform float4 _Center;
                 uniform float _Radius;
                 uniform float _Feather;
+                uniform float _Speed;
+                uniform float _Bloom;
 
                 struct vertexInput {
                     float4 vertex : POSITION;
@@ -85,9 +89,20 @@
                     return 0;
                 }
 
+                float drawCircleAnimate(float2 uv, float2 center, float radius, float feather) {
+                    float circle = pow((uv.y - center.y), 2) + pow((uv.x - center.x), 2);
+                    float radiusSq = pow(radius, 2);
+                    
+                    if(circle < radiusSq) {
+                        float fadeVal = saturate(sin(_Time.y * _Speed)) * _Bloom;
+                        return smoothstep(radiusSq, radiusSq - feather, circle) * fadeVal;
+                    }
+                    return 0;
+                }
+
                 half4 frag(vertexOutput i) : COLOR {
                     float4 col = tex2D(_MainTex, i.texcoord) * _Color;
-                    col.a = drawCircleFade(i.texcoord, _Center.xy, _Radius, _Feather);
+                    col.a = drawCircleAnimate(i.texcoord, _Center.xy, _Radius, _Feather);
                     return col;
                 }
             ENDCG

@@ -36,9 +36,13 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Making Stuff look Good Youtube Channel](https://www.youtube.com/channel/UCEklP9iLcpExB8vp_fWQseg)
 
+- [Minions Art Patreon](https://www.patreon.com/posts/how-i-got-with-19042499)
+
 - [Real-Time Rendering](http://www.realtimerendering.com/book.html)
 
 - [Repository with all sorts of references](https://github.com/sindresorhus/awesome)
+
+- [Ronja's Tutorials](https://ronja-tutorials.tumblr.com/tagged/tutorial/chrono)
 
 - [Technical Artist Chayan Vinayak Youtube Channel](https://www.youtube.com/channel/UCwtWCujRCWK9ba3f474sTOQ)
 

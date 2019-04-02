@@ -44,7 +44,7 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Ronja's Tutorials](https://ronja-tutorials.tumblr.com/tagged/tutorial/chrono)
 
-- [Roystan Shader Tutorials](https://roystan.net)
+- [Roystan Shader Tutorials and misc](https://roystan.net)
 
 - [Technical Artist Chayan Vinayak Youtube Channel](https://www.youtube.com/channel/UCwtWCujRCWK9ba3f474sTOQ)
 

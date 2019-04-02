@@ -1,4 +1,4 @@
-# Unity-Shader-Playground
+# Unity-Shader-Playground 📐🎮
 This is my first look at shader manipulation in Unity.
 
 In this project you will find a Unity scene with the zombunny 3D model from Unity's [Survival Shooter Tutorial](https://unity3d.com/learn/tutorials/s/survival-shooter-tutorial) and a few custom shaders I developed while following Penny de Byl's [course](https://www.udemy.com/unity-shaders/learn/v4/overview) in Udemy.

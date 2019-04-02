@@ -32,8 +32,6 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Linden Reid's Blog](https://lindenreid.wordpress.com/)
 
-- [List of shader effects and how to implement them](http://www.shaderslab.com/shaders.html)
-
 - [Making Stuff look Good Youtube Channel](https://www.youtube.com/channel/UCEklP9iLcpExB8vp_fWQseg)
 
 - [Minions Art Patreon](https://www.patreon.com/posts/how-i-got-with-19042499)
@@ -45,6 +43,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 - [Ronja's Tutorials](https://ronja-tutorials.tumblr.com/tagged/tutorial/chrono)
 
 - [Roystan Shader Tutorials and misc](https://roystan.net)
+
+- [Shader Laboratory](http://www.shaderslab.com/shaders.html)
 
 - [Technical Artist Chayan Vinayak Youtube Channel](https://www.youtube.com/channel/UCwtWCujRCWK9ba3f474sTOQ)
 

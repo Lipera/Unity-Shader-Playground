@@ -48,7 +48,7 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [The Book of Shaders](https://thebookofshaders.com/)
 
-- [Toon Shader Tutorial from Roystan](https://roystan.net/articles/toon-shader.html)
+- [Roystan Shader Tutorial](https://roystan.net)
 
 - [Unity List](https://unitylist.com/)
 

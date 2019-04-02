@@ -52,4 +52,6 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Unity List](https://unitylist.com/)
 
+- [Unity 2018 Shader and Effects Cookbook](https://www.amazon.com/Unity-2018-Shaders-Effects-Cookbook/dp/1788396235)
+
 - [Unity Shader Documentation](https://docs.unity3d.com/Manual/SL-SurfaceShaders.html)

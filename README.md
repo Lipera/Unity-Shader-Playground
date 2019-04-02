@@ -1,4 +1,4 @@
-# Unity-Shader-Playground
+# Unity-Shader-Playground 📐🎮
 This is my first look at shader manipulation in Unity.
 
 In this project you will find a Unity scene with the zombunny 3D model from Unity's [Survival Shooter Tutorial](https://unity3d.com/learn/tutorials/s/survival-shooter-tutorial) and a few custom shaders I developed while following Penny de Byl's [course](https://www.udemy.com/unity-shaders/learn/v4/overview) in Udemy.
@@ -30,9 +30,7 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [GPU Gems](https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch01.html)
 
-- [Linden Reid's Game Development Portfolio Guide](https://lindenreid.wordpress.com/)
-
-- [List of shader effects and how to implement them](http://www.shaderslab.com/shaders.html)
+- [Linden Reid's Blog](https://lindenreid.wordpress.com/)
 
 - [Making Stuff look Good Youtube Channel](https://www.youtube.com/channel/UCEklP9iLcpExB8vp_fWQseg)
 
@@ -44,12 +42,16 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Ronja's Tutorials](https://ronja-tutorials.tumblr.com/tagged/tutorial/chrono)
 
+- [Roystan Shader Tutorials and misc](https://roystan.net)
+
+- [Shader Laboratory](http://www.shaderslab.com/shaders.html)
+
 - [Technical Artist Chayan Vinayak Youtube Channel](https://www.youtube.com/channel/UCwtWCujRCWK9ba3f474sTOQ)
 
 - [The Book of Shaders](https://thebookofshaders.com/)
 
-- [Toon Shader Tutorial from Roystan](https://roystan.net/articles/toon-shader.html)
-
 - [Unity List](https://unitylist.com/)
+
+- [Unity 2018 Shader and Effects Cookbook](https://www.amazon.com/Unity-2018-Shaders-Effects-Cookbook/dp/1788396235)
 
 - [Unity Shader Documentation](https://docs.unity3d.com/Manual/SL-SurfaceShaders.html)

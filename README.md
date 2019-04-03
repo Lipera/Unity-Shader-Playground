@@ -30,6 +30,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [GPU Gems](https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch01.html)
 
+- [Keijiro Takahashi's GitHub](https://github.com/keijiro)
+
 - [Linden Reid's Blog](https://lindenreid.wordpress.com/)
 
 - [Making Stuff look Good Youtube Channel](https://www.youtube.com/channel/UCEklP9iLcpExB8vp_fWQseg)

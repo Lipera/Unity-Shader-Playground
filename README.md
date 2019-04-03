@@ -14,21 +14,19 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 ## Cool References
 
-- [3D Math Primer For Graphics and Game Development](https://www.amazon.com/Primer-Graphics-Development-Wordware-Library/dp/1556229119)
+#### Auxiliary material for shader programming
+
+- [Desmos Graph](https://www.desmos.com/calculator) for visualizing 2D graphs.
+
+- [GeoGebra](https://www.geogebra.org/3d?lang=en) for visualizing 2D and 3D graphs.
+
+#### Blogs / websites / YouTube channels / repositories
 
 - [Alan Zucconi](https://www.alanzucconi.com/)
 
 - [Catlike C# and Shader Tutorials](https://catlikecoding.com/unity/tutorials/?fbclid=IwAR2HaODbCqZyZnI6-DtvP_HX2gE6te61sQKLySlTafv_RhvhbSpcc81oAls)
 
-- [Concise Cg built-in function table](https://www.sjbaker.org/wiki/index.php?title=Concise_Cg_built-in_function_table)
-
-- [Desmos Graph](https://www.desmos.com/calculator) for visualizing 2D graphs.
-
 - [Febucci Unity Shader Tutorials and misc](https://www.febucci.com/tutorials/)
-
-- [GeoGebra](https://www.geogebra.org/3d?lang=en) for visualizing 2D and 3D graphs.
-
-- [GPU Gems](https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch01.html)
 
 - [Keijiro Takahashi's GitHub](https://github.com/keijiro)
 
@@ -38,24 +36,46 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Minions Art Patreon](https://www.patreon.com/posts/how-i-got-with-19042499)
 
-- [Real-Time Rendering](http://www.realtimerendering.com/book.html)
-
-- [Real-Time VFX community](https://realtimevfx.com)
-
-- [Repository with all sorts of references](https://github.com/sindresorhus/awesome)
-
 - [Ronja's Tutorials](https://ronja-tutorials.tumblr.com/tagged/tutorial/chrono)
 
 - [Roystan Shader Tutorials and misc](https://roystan.net)
 
-- [Shader Laboratory](http://www.shaderslab.com/shaders.html)
+- [Repository with all sorts of references](https://github.com/sindresorhus/awesome)
 
-- [Technical Artist Chayan Vinayak Youtube Channel](https://www.youtube.com/channel/UCwtWCujRCWK9ba3f474sTOQ)
+- [Technical Artist Chayan Vinayak Goswami's Youtube Channel](https://www.youtube.com/channel/UCwtWCujRCWK9ba3f474sTOQ)
+
+#### Books
+
+- [3D Math Primer For Graphics and Game Development](https://www.amazon.com/Primer-Graphics-Development-Wordware-Library/dp/1556229119)
+
+- [GPU Gems](https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch01.html)
+
+- [Real-Time Rendering](http://www.realtimerendering.com/book.html)
 
 - [The Book of Shaders](https://thebookofshaders.com/)
 
-- [Unity List](https://unitylist.com/)
-
 - [Unity 2018 Shader and Effects Cookbook](https://www.amazon.com/Unity-2018-Shaders-Effects-Cookbook/dp/1788396235)
 
+#### Communities
+
+- [Real-Time VFX community](https://realtimevfx.com)
+
+- [Tech Artist community](http://tech-artists.org/)
+
+#### Documentation
+
+- [Concise Cg built-in function table](https://www.sjbaker.org/wiki/index.php?title=Concise_Cg_built-in_function_table)
+
+- [Microsoft HLSL Documentation](https://docs.microsoft.com/en-us/windows/desktop/direct3dhlsl/dx-graphics-hlsl)
+
+- [Nvidia CG Documentation](http://developer.download.nvidia.com/cg/index_stdlib.html)
+
 - [Unity Shader Documentation](https://docs.unity3d.com/Manual/SL-SurfaceShaders.html)
+
+#### Other
+
+- [Shader Laboratory](http://www.shaderslab.com/shaders.html)
+
+- [Unity List](https://unitylist.com/)
+
+

@@ -38,6 +38,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Real-Time Rendering](http://www.realtimerendering.com/book.html)
 
+- [Real-Time VFX community](https://realtimevfx.com)
+
 - [Repository with all sorts of references](https://github.com/sindresorhus/awesome)
 
 - [Ronja's Tutorials](https://ronja-tutorials.tumblr.com/tagged/tutorial/chrono)

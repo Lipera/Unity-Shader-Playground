@@ -28,6 +28,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Febucci Unity Shader Tutorials and misc](https://www.febucci.com/tutorials/)
 
+- [Game Development Conference (GDC) YouTube channel](https://www.youtube.com/channel/UC0JB7TSe49lg56u6qH8y_MQ)
+
 - [Keijiro Takahashi's GitHub](https://github.com/keijiro)
 
 - [Linden Reid's Blog](https://lindenreid.wordpress.com/)

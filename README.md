@@ -46,6 +46,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Technical Artist Chayan Vinayak Goswami's Youtube Channel](https://www.youtube.com/channel/UCwtWCujRCWK9ba3f474sTOQ)
 
+I recommend following all of these amazing people on twitter since they post interesting stuff and have cool discussions.
+
 #### Books
 
 - [3D Math Primer For Graphics and Game Development](https://www.amazon.com/Primer-Graphics-Development-Wordware-Library/dp/1556229119)

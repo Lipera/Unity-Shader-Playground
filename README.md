@@ -30,7 +30,7 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Game Development Conference (GDC) YouTube channel](https://www.youtube.com/channel/UC0JB7TSe49lg56u6qH8y_MQ)
 
-- [Íñigo Quílez website](https://www.iquilezles.org/)
+- [Íñigo Quílez's website](https://www.iquilezles.org/)
 
 - [Keenan Woodall's GitHub](https://github.com/keenanwoodall)
 

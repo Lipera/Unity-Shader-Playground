@@ -24,8 +24,9 @@
             CGPROGRAM
                 #pragma vertex vert
                 #pragma fragment frag
-                #pragma shader_feature _USENORMAL_OFF _USENORMAL_ON
                 //this line is used to compile several version of this shader based on the enums passed in the properties
+                #pragma shader_feature _USENORMAL_OFF _USENORMAL_ON
+                #include "CVGLighting.cginc"
 
                 uniform half4 _Color;
                 uniform sampler2D _MainTex;
@@ -56,22 +57,6 @@
                     #endif
                 };
 
-                float3 normalFromColor(float4 colorVal) {
-                    #if defined(UNITY_NO_DXT5nm) // If there is no DXT comnpression return this result
-                        return colorVal.xyz * 2 - 1;
-                    #else
-                        //R => A
-                        //G
-                        //B => ignored
-                        float3 normalVal;
-                        normalVal = float3( colorVal.a * 2.0 - 1.0,
-                                            colorVal.g * 2.0 - 1.0,
-                                            0.0);
-                        normalVal.z = sqrt(1.0 - dot(normalVal, normalVal)); //inspect lecture 29 for explanation of equation
-                        return normalVal;
-                    #endif
-                }
-
                 vertexOutput vert(vertexInput v) 
                 {
                     vertexOutput o;
@@ -94,18 +79,7 @@
                 half4 frag(vertexOutput i) : COLOR 
                 {
                     #if _USENORMAL_ON
-                        //Color at Pixel which we read from Tangent space normal map
-                        float4 colorAtPixel = tex2D(_NormalMap, i.normalTexCoord);
-
-                        //Normal value converted from Color value
-                        float3 normalAtPixel = normalFromColor(colorAtPixel);
-
-                        //Compose TBN matrix
-                        float3x3 TBNWorld = float3x3(i.tangentWorld.xyz, i.binormalWorld.xyz, i.normalWorld.xyz);
-                        float3 worldNormalAtPixel = normalize(mul(normalAtPixel, TBNWorld));
-                    
-                        //float3 worldNormalAtPixel = WorldNormalFromNormalMap(_NormalMap, i.normalTexCoord.xy, i.tangentWorld.xyz, i.binormalWorld.xyz, i.normalWorld.xyz);
-
+                        float3 worldNormalAtPixel = WorldNormalFromNormalMap(_NormalMap, i.normalTexCoord.xy, i.tangentWorld.xyz, i.binormalWorld.xyz, i.normalWorld.xyz);
                         return float4(worldNormalAtPixel, 1);
                         //return tex2D(_MainTex, i.texcoord) * _Color;
                     #else

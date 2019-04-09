@@ -82,6 +82,8 @@ I recommend following all of these amazing people on twitter since they post int
 
 - [Shader Laboratory](http://www.shaderslab.com/shaders.html)
 
+- [Shader Toy](https://www.shadertoy.com/)
+
 - [Unity List](https://unitylist.com/)
 
 

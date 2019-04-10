@@ -68,6 +68,8 @@ I recommend following all of these amazing people on twitter since they post int
 
 - [Real-Time VFX community](https://realtimevfx.com)
 
+- [Shaders Subreddit](https://www.reddit.com/r/shaders/)
+
 - [Tech Artist community](http://tech-artists.org/)
 
 - [Unity 3D Subreddit](https://www.reddit.com/r/Unity3D/)

@@ -70,6 +70,8 @@ I recommend following all of these amazing people on twitter since they post int
 
 - [Tech Artist community](http://tech-artists.org/)
 
+- [Unity 3D Subreddit](https://www.reddit.com/r/Unity3D/)
+
 #### Documentation
 
 - [Concise Cg built-in function table](https://www.sjbaker.org/wiki/index.php?title=Concise_Cg_built-in_function_table)

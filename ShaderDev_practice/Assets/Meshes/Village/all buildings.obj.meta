@@ -1,0 +1,464 @@
+fileFormatVersion: 2
+guid: d71ee58aad2f34da1913d275f750d1ec
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: _1_decoration3
+    100002: _1_roof4
+    100004: _1_stone2
+    100006: _1_wood7
+    100008: _2_fence
+    100010: _2_stone
+    100012: _2_stone_1
+    100014: _2_stone_2
+    100016: _2_stone_3
+    100018: _2_wheel
+    100020: _3_decoration
+    100022: _3_roof5
+    100024: _3_wood2
+    100026: _4_decoration6
+    100028: _4_roof
+    100030: _4_stone3
+    100032: _4_wood
+    100034: _5_decoration4
+    100036: _5_roof1
+    100038: _5_stone5
+    100040: _5_wood4
+    100042: _6_decoration5
+    100044: _6_roof6
+    100046: _6_stone4
+    100048: _6_wood6
+    100050: _7_decoration1
+    100052: _7_roof3
+    100054: _7_stone1
+    100056: _7_wood5
+    100058: _8_decoration7
+    100060: _8_roof2
+    100062: _8_stone7
+    100064: _8_wood3
+    100066: __decoration2
+    100068: __roof7
+    100070: __stone6
+    100072: __wood1
+    100074: //RootNode
+    400000: _1_decoration3
+    400002: _1_roof4
+    400004: _1_stone2
+    400006: _1_wood7
+    400008: _2_fence
+    400010: _2_stone
+    400012: _2_stone_1
+    400014: _2_stone_2
+    400016: _2_stone_3
+    400018: _2_wheel
+    400020: _3_decoration
+    400022: _3_roof5
+    400024: _3_wood2
+    400026: _4_decoration6
+    400028: _4_roof
+    400030: _4_stone3
+    400032: _4_wood
+    400034: _5_decoration4
+    400036: _5_roof1
+    400038: _5_stone5
+    400040: _5_wood4
+    400042: _6_decoration5
+    400044: _6_roof6
+    400046: _6_stone4
+    400048: _6_wood6
+    400050: _7_decoration1
+    400052: _7_roof3
+    400054: _7_stone1
+    400056: _7_wood5
+    400058: _8_decoration7
+    400060: _8_roof2
+    400062: _8_stone7
+    400064: _8_wood3
+    400066: __decoration2
+    400068: __roof7
+    400070: __stone6
+    400072: __wood1
+    400074: //RootNode
+    2300000: _1_decoration3
+    2300002: _1_roof4
+    2300004: _1_stone2
+    2300006: _1_wood7
+    2300008: _2_fence
+    2300010: _2_stone
+    2300012: _2_stone_1
+    2300014: _2_stone_2
+    2300016: _2_stone_3
+    2300018: _2_wheel
+    2300020: _3_decoration
+    2300022: _3_roof5
+    2300024: _3_wood2
+    2300026: _4_decoration6
+    2300028: _4_roof
+    2300030: _4_stone3
+    2300032: _4_wood
+    2300034: _5_decoration4
+    2300036: _5_roof1
+    2300038: _5_stone5
+    2300040: _5_wood4
+    2300042: _6_decoration5
+    2300044: _6_roof6
+    2300046: _6_stone4
+    2300048: _6_wood6
+    2300050: _7_decoration1
+    2300052: _7_roof3
+    2300054: _7_stone1
+    2300056: _7_wood5
+    2300058: _8_decoration7
+    2300060: _8_roof2
+    2300062: _8_stone7
+    2300064: _8_wood3
+    2300066: __decoration2
+    2300068: __roof7
+    2300070: __stone6
+    2300072: __wood1
+    3300000: _1_decoration3
+    3300002: _1_roof4
+    3300004: _1_stone2
+    3300006: _1_wood7
+    3300008: _2_fence
+    3300010: _2_stone
+    3300012: _2_stone_1
+    3300014: _2_stone_2
+    3300016: _2_stone_3
+    3300018: _2_wheel
+    3300020: _3_decoration
+    3300022: _3_roof5
+    3300024: _3_wood2
+    3300026: _4_decoration6
+    3300028: _4_roof
+    3300030: _4_stone3
+    3300032: _4_wood
+    3300034: _5_decoration4
+    3300036: _5_roof1
+    3300038: _5_stone5
+    3300040: _5_wood4
+    3300042: _6_decoration5
+    3300044: _6_roof6
+    3300046: _6_stone4
+    3300048: _6_wood6
+    3300050: _7_decoration1
+    3300052: _7_roof3
+    3300054: _7_stone1
+    3300056: _7_wood5
+    3300058: _8_decoration7
+    3300060: _8_roof2
+    3300062: _8_stone7
+    3300064: _8_wood3
+    3300066: __decoration2
+    3300068: __roof7
+    3300070: __stone6
+    3300072: __wood1
+    4300000: _1_decoration3
+    4300002: _1_roof4
+    4300004: _1_stone2
+    4300006: _1_wood7
+    4300008: _2_fence
+    4300010: _2_stone
+    4300012: _2_stone_1
+    4300014: _2_stone_2
+    4300016: _2_stone_3
+    4300018: _2_wheel
+    4300020: _3_decoration
+    4300022: _3_roof5
+    4300024: _3_wood2
+    4300026: _4_decoration6
+    4300028: _4_roof
+    4300030: _4_stone3
+    4300032: _4_wood
+    4300034: _5_decoration4
+    4300036: _5_roof1
+    4300038: _5_stone5
+    4300040: _5_wood4
+    4300042: _6_decoration5
+    4300044: _6_roof6
+    4300046: _6_stone4
+    4300048: _6_wood6
+    4300050: _7_decoration1
+    4300052: _7_roof3
+    4300054: _7_stone1
+    4300056: _7_wood5
+    4300058: _8_decoration7
+    4300060: _8_roof2
+    4300062: _8_stone7
+    4300064: _8_wood3
+    4300066: __decoration2
+    4300068: __roof7
+    4300070: __stone6
+    4300072: __wood1
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _1_decoration3Mat
+    second: {fileID: 2100000, guid: db4f15d993f514297a2a15d466b6fd23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _1_roof4Mat
+    second: {fileID: 2100000, guid: 0ce8bdc8afa7e44ca8dc7f7ae3d77d94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _1_stone2Mat
+    second: {fileID: 2100000, guid: a94250cca570948ebb98a63bee930de7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _1_wood7Mat
+    second: {fileID: 2100000, guid: 474003122cbab4a659dc9a403cf0c478, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _2_fenceMat
+    second: {fileID: 2100000, guid: 6902ab75e2708424a9287288f0c4057c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _2_stoneMat
+    second: {fileID: 2100000, guid: 2e85766db1bea4081bcf15894b71b0e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _2_stone_1Mat
+    second: {fileID: 2100000, guid: b73ee45abce8240ca8d6b9ca442f423c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _2_stone_2Mat
+    second: {fileID: 2100000, guid: 5ab1346261d1c457f87b4903ecc06bd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _2_stone_3Mat
+    second: {fileID: 2100000, guid: db4b125dd79cc4e59849b22735f4bf29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _2_wheelMat
+    second: {fileID: 2100000, guid: 18887ab436be9479388b6f48357b04c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _3_decorationMat
+    second: {fileID: 2100000, guid: 752bc5ad63759435db707c0afbacc601, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _3_roof5Mat
+    second: {fileID: 2100000, guid: 52a2de93b8e7e4236b4d394c21510592, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _3_wood2Mat
+    second: {fileID: 2100000, guid: 374caab794d044107b4bb0c97c2745fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _4_decoration6Mat
+    second: {fileID: 2100000, guid: 0b0b8519d557a45fbb9d6411d44d796d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _4_roofMat
+    second: {fileID: 2100000, guid: 5dad232f6923047d59513119b2a44438, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _4_stone3Mat
+    second: {fileID: 2100000, guid: 552748b5c586e41de9099eef41b7521a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _4_woodMat
+    second: {fileID: 2100000, guid: cbd163e1bc0ba49d5a7993742d806688, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _5_decoration4Mat
+    second: {fileID: 2100000, guid: c8385cef621b74b3b974b871714a65a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _5_roof1Mat
+    second: {fileID: 2100000, guid: a80a20539499345e2b68f60f21bca57b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _5_stone5Mat
+    second: {fileID: 2100000, guid: 31f9de36f96a34ac0bb34378c1a3b3dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _5_wood4Mat
+    second: {fileID: 2100000, guid: dfb3a73737dcf42e593f01c722d607f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _6_decoration5Mat
+    second: {fileID: 2100000, guid: 2802066566ce24cddaf001c311f42b49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _6_roof6Mat
+    second: {fileID: 2100000, guid: abef62b88b38942c2a451985abac4d7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _6_stone4Mat
+    second: {fileID: 2100000, guid: b858d7a8d8ef24b29a6c218d8f68a930, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _6_wood6Mat
+    second: {fileID: 2100000, guid: 443f65503f6834ebd8f2c245819b03ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _7_decoration1Mat
+    second: {fileID: 2100000, guid: 088ee3e1f223147b4812c8ce8292508a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _7_roof3Mat
+    second: {fileID: 2100000, guid: c5f7b8085f4d94c0ba49fc70fcc4ac2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _7_stone1Mat
+    second: {fileID: 2100000, guid: a7b6b73c2751b4f02976549a07911578, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _7_wood5Mat
+    second: {fileID: 2100000, guid: e5b3f955f23304bf78fecf4bea4ac17b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _8_decoration7Mat
+    second: {fileID: 2100000, guid: e8b7f17c3d26a49e7b293e0ef01b34f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _8_roof2Mat
+    second: {fileID: 2100000, guid: 5d054ef32ec26400dbef897124ecb3fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _8_stone7Mat
+    second: {fileID: 2100000, guid: 6f7e51b0ebf00463e8a9a7f304e11801, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _8_wood3Mat
+    second: {fileID: 2100000, guid: 5dd274701d9fc4a62ae41efd047fd817, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: __decoration2Mat
+    second: {fileID: 2100000, guid: 52924818cec674a5793eaeb08b6c33ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: __roof7Mat
+    second: {fileID: 2100000, guid: 6c55ab57298cc4da8af4b98e63d6e8ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: __stone6Mat
+    second: {fileID: 2100000, guid: 4d093a9e5dd364f7ab89809ce4737b1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: __wood1Mat
+    second: {fileID: 2100000, guid: 6f56063d16b8d4f82b5899740ac8b670, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

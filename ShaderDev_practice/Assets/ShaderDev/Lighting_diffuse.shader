@@ -70,12 +70,12 @@
                     //o.pos = mul(UNITY_MATRIX_MVP, v.vertex); //this method is obsolete and couls not support all graph API's
                     o.pos = UnityObjectToClipPos(v.vertex);
                     o.texcoord.xy = (v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw); //x and y coordinates are for tilling. z and w coordinates are for offseting
-                    o.normalWorld = normalize(mul(v.normal, unity_WorldToObject));
+                    o.normalWorld = float4(normalize(mul(normalize(v.normal.xyz), (float3x3)unity_WorldToObject)), v.normal.w);
 
                     #if _USENORMAL_ON
                         // World space T, B, N values
                         o.normalTexCoord.xy = (v.texcoord.xy * _NormalMap_ST.xy + _NormalMap_ST.zw);
-                        o.tangentWorld = normalize(mul(v.tangent, unity_ObjectToWorld));
+                        o.tangentWorld = float4(normalize(mul((float3x3)unity_ObjectToWorld, v.tangent.xyz)), v.tangent.w);
                         o.binormalWorld = normalize(cross(o.normalWorld, o.tangentWorld) * v.tangent.w);
                     #endif
                     #if _LIGHTING_VERT
@@ -100,7 +100,7 @@
                         float attenuation = 1;
                         return float4(DiffuseLambert(worldNormalAtPixel, lightDir, lightColor, _Diffuse, attenuation), 1);
                     #elif _LIGHTING_VERT
-                        return float4(i.surfaceColor, 1);
+                        return float4(i.surfaceColor.xyz, 1);
                     #else
                         return float4(worldNormalAtPixel, 1);
                     #endif

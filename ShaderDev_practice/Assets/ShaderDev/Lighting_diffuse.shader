@@ -1,24 +1,22 @@
-﻿Shader "ShaderDev/11NormalMap_v2" 
-{
-    Properties 
-    {
+﻿Shader "ShaderDev/13Lighting_diffuse" {
+    Properties {
         _Color ("Main Color", Color) = (1,1,1,1)
         _MainTex("Main Texture", 2D) = "white" {}
         _NormalMap("Normal Map", 2D) = "bump" {}
         [KeywordEnum(Off,On)] _UseNormal("Use Normal Map?", Float) = 0
+        _Diffuse("Diffuse %", Range(0,1)) = 1
+        [KeywordEnum(Off, Vert, Frag)] _Lighting("Lighting Mode", Float) = 0
     }
 
-    SubShader
-    {
-        Tags 
-        { 
+    SubShader {
+        Tags { 
+            "Lighting Mode" = "ForwardBase"
             "Queue" = "Transparent" 
             "IgnoreProjector" = "True" 
             "RenderType" = "Transparent"
         }
 
-        Pass
-        {
+        Pass {
             Blend SrcAlpha OneMinusSrcAlpha
 
             CGPROGRAM
@@ -26,6 +24,7 @@
                 #pragma fragment frag
                 //this line is used to compile several version of this shader based on the enums passed in the properties
                 #pragma shader_feature _USENORMAL_OFF _USENORMAL_ON
+                #pragma shader_feature _LIGHTING_OFF _LIGHTING_VERT _LIGHTING_FRAG
                 #include "CVGLighting.cginc"
 
                 uniform half4 _Color;
@@ -35,8 +34,10 @@
                 uniform sampler2D _NormalMap;
                 uniform float4 _NormalMap_ST;
 
-                struct vertexInput
-                {
+                uniform float _Diffuse;
+                uniform float4 _LightColor0;
+
+                struct vertexInput {
                     float4 vertex : POSITION;
                     float4 normal : NORMAL;
                     float4 texcoord : TEXCOORD0;
@@ -45,8 +46,7 @@
                     #endif
                 };
 
-                struct vertexOutput
-                {
+                struct vertexOutput {
                     float4 pos : SV_POSITION;
                     float4 texcoord : TEXCOORD0;
                     float4 normalWorld : TEXCOORD1; //MSDN Semantics does not have an attribute for normal or tangent so we place it in an element of the same type float4
@@ -55,10 +55,16 @@
                         float3 binormalWorld : TEXCOORD3;
                         float4 normalTexCoord : TEXCOORD4;
                     #endif
+                    #if _LIGHTING_VERT
+                        float4 surfaceColor : COLOR0;
+                    #endif
                 };
 
-                vertexOutput vert(vertexInput v) 
-                {
+                float3 DiffuseLambert(float3 normalDir, float3 lightDir, float3 lightColor, float diffuseFactor, float attenuation) {
+                    return lightColor * diffuseFactor * attenuation * max(0, dot(normalDir, lightDir));
+                }
+
+                vertexOutput vert(vertexInput v) {
                     vertexOutput o;
                     UNITY_INITIALIZE_OUTPUT(vertexOutput, o); //necessary for HLSL compilers
                     //o.pos = mul(UNITY_MATRIX_MVP, v.vertex); //this method is obsolete and couls not support all graph API's
@@ -72,18 +78,31 @@
                         o.tangentWorld = normalize(mul(v.tangent, unity_ObjectToWorld));
                         o.binormalWorld = normalize(cross(o.normalWorld, o.tangentWorld) * v.tangent.w);
                     #endif
-
+                    #if _LIGHTING_VERT
+                        float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
+                        float3 lightColor = _LightColor0.xyz;
+                        float attenuation = 1;
+                        o.surfaceColor = float4(DiffuseLambert(o.normalWorld, lightDir, lightColor, _Diffuse, attenuation), 1);
+                    #endif
                     return o;
                 }
 
-                half4 frag(vertexOutput i) : COLOR 
-                {
+                half4 frag(vertexOutput i) : COLOR {
                     #if _USENORMAL_ON
                         float3 worldNormalAtPixel = WorldNormalFromNormalMap(_NormalMap, i.normalTexCoord.xy, i.tangentWorld.xyz, i.binormalWorld.xyz, i.normalWorld.xyz);
-                        return float4(worldNormalAtPixel, 1);
-                        //return tex2D(_MainTex, i.texcoord) * _Color;
                     #else
-                        return float4(i.normalWorld.xyz,1);
+                        float3 worldNormalAtPixel = i.normalWorld.xyz;
+                    #endif
+
+                    #if _LIGHTING_FRAG
+                        float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
+                        float3 lightColor = _LightColor0.xyz;
+                        float attenuation = 1;
+                        return float4(DiffuseLambert(worldNormalAtPixel, lightDir, lightColor, _Diffuse, attenuation), 1);
+                    #elif _LIGHTING_VERT
+                        return float4(i.surfaceColor, 1);
+                    #else
+                        return float4(worldNormalAtPixel, 1);
                     #endif
                 }
 

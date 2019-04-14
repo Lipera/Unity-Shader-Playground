@@ -1,4 +1,4 @@
-﻿Shader "ShaderDev/13Lighting_diffuse" {
+﻿Shader "ShaderDev/14Lighting_specular" {
     Properties {
         _Color ("Main Color", Color) = (1,1,1,1)
         _MainTex("Main Texture", 2D) = "white" {}
@@ -6,17 +6,20 @@
         [KeywordEnum(Off,On)] _UseNormal("Use Normal Map?", Float) = 0
         _Diffuse("Diffuse %", Range(0,1)) = 1
         [KeywordEnum(Off, Vert, Frag)] _Lighting("Lighting Mode", Float) = 0
+        _SpecularMap("Specular Map", 2D) = "black" {}
+        _SpecularFactor("Specular %", Range(0,1)) = 1
+        _SpecularPower("Specular Power", Float) = 100
     }
 
     SubShader {
         Tags { 
-            "Lighting Mode" = "ForwardBase"
             "Queue" = "Transparent" 
             "IgnoreProjector" = "True" 
             "RenderType" = "Transparent"
         }
 
         Pass {
+            Tags { "Lighting Mode" = "ForwardBase" }
             Blend SrcAlpha OneMinusSrcAlpha
 
             CGPROGRAM
@@ -37,6 +40,10 @@
                 uniform float _Diffuse;
                 uniform float4 _LightColor0;
 
+                uniform sampler2D _SpecularMap;
+                uniform float _SpecularFactor;                
+                uniform float _SpecularPower;
+
                 struct vertexInput {
                     float4 vertex : POSITION;
                     float4 normal : NORMAL;
@@ -50,20 +57,16 @@
                     float4 pos : SV_POSITION;
                     float4 texcoord : TEXCOORD0;
                     float4 normalWorld : TEXCOORD1; //MSDN Semantics does not have an attribute for normal or tangent so we place it in an element of the same type float4
+                    float4 posWorld : TEXCOORD2;
                     #if _USENORMAL_ON
-                        float4 tangentWorld : TEXCOORD2;
-                        float3 binormalWorld : TEXCOORD3;
-                        float4 normalTexCoord : TEXCOORD4;
+                        float4 tangentWorld : TEXCOORD3;
+                        float3 binormalWorld : TEXCOORD4;
+                        float4 normalTexCoord : TEXCOORD5;
                     #endif
                     #if _LIGHTING_VERT
                         float4 surfaceColor : COLOR0;
                     #endif
                 };
-
-                // Funciton moved to CVGLighting.cginc file in Specular chapter
-                // float3 DiffuseLambert(float3 normalDir, float3 lightDir, float3 lightColor, float diffuseFactor, float attenuation) {
-                //     return lightColor * diffuseFactor * attenuation * max(0, dot(normalDir, lightDir));
-                // }
 
                 vertexOutput vert(vertexInput v) {
                     vertexOutput o;
@@ -72,6 +75,7 @@
                     o.pos = UnityObjectToClipPos(v.vertex);
                     o.texcoord.xy = (v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw); //x and y coordinates are for tilling. z and w coordinates are for offseting
                     o.normalWorld = float4(normalize(mul(normalize(v.normal.xyz), (float3x3)unity_WorldToObject)), v.normal.w);
+                    o.posWorld = mul(unity_ObjectToWorld, v.vertex);
 
                     #if _USENORMAL_ON
                         // World space T, B, N values
@@ -83,7 +87,12 @@
                         float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
                         float3 lightColor = _LightColor0.xyz;
                         float attenuation = 1;
-                        o.surfaceColor = float4(DiffuseLambert(o.normalWorld, lightDir, lightColor, _Diffuse, attenuation), 1);
+                        float3 diffuseCol = DiffuseLambert(o.normalWorld, lightDir, lightColor, _Diffuse, attenuation);
+
+                        float4 specularMap = tex2Dlod(_SpecularMap, float4(o.texcoord.xy, 0, 0)); //using textcoordinate of main texture because map of specular should have the same structure as the main texture
+                        float3 worldSpaceViewDir = normalize(_WorldSpaceCameraPos - o.posWorld);
+                        float3 specularCol = SpecularBlinnPhong(o.normalWorld, lightDir, worldSpaceViewDir, specularMap.rgb, _SpecularFactor, attenuation, _SpecularPower);
+                        o.surfaceColor = float4(diffuseCol + specularCol, 1);
                     #endif
                     return o;
                 }
@@ -99,7 +108,12 @@
                         float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
                         float3 lightColor = _LightColor0.xyz;
                         float attenuation = 1;
-                        return float4(DiffuseLambert(worldNormalAtPixel, lightDir, lightColor, _Diffuse, attenuation), 1);
+                        float3 diffuseCol = DiffuseLambert(worldNormalAtPixel, lightDir, lightColor, _Diffuse, attenuation);
+
+                        float4 specularMap = tex2Dlod(_SpecularMap, float4(i.texcoord.xy, 0, 0)); //using textcoordinate of main texture because map of specular should have the same structure as the main texture
+                        float3 worldSpaceViewDir = normalize(_WorldSpaceCameraPos - i.posWorld);
+                        float3 specularCol = SpecularBlinnPhong(worldNormalAtPixel, lightDir, worldSpaceViewDir, specularMap.rgb, _SpecularFactor, attenuation, _SpecularPower);
+                        return float4(diffuseCol + specularCol, 1);
                     #elif _LIGHTING_VERT
                         return float4(i.surfaceColor.xyz, 1);
                     #else

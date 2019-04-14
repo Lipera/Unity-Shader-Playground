@@ -30,4 +30,13 @@ float3 WorldNormalFromNormalMap(sampler2D normalMap, float2 normalTexCoord, floa
     return normalize(mul(normalAtPixel, TBNWorld));                  
 }
 
+float3 DiffuseLambert(float3 normalDir, float3 lightDir, float3 lightColor, float diffuseFactor, float attenuation) {
+    return lightColor * diffuseFactor * attenuation * max(0, dot(normalDir, lightDir));
+}
+
+float3 SpecularBlinnPhong(float3 normalDir, float3 lightDir, float3 worldSpaceViewDir, float3 specularColor, float specularFactor, float attenuation, float specularPower) {
+    float3 halfwayDir = normalize(lightDir + worldSpaceViewDir);
+    return specularColor * specularFactor * attenuation * pow(max(0, dot(normalDir, halfwayDir)), specularPower);
+}
+
 #endif

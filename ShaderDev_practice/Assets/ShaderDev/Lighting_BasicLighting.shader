@@ -95,7 +95,7 @@
                         float3 lightColor = _LightColor0.xyz;
                         float attenuation = 1;
                         float3 diffuseCol = DiffuseLambert(o.normalWorld, lightDir, lightColor, _Diffuse, attenuation);
-                        float3 mainTexCol = tex2D(_MainTex, o.texcoord.xy);
+                        float3 mainTexCol = tex2Dlod(_MainTex, float4(o.texcoord.xy, 0,0));
 
                         float4 specularMap = tex2Dlod(_SpecularMap, float4(o.texcoord.xy, 0, 0)); //using textcoordinate of main texture because map of specular should have the same structure as the main texture
                         float3 worldSpaceViewDir = normalize(_WorldSpaceCameraPos - o.posWorld);

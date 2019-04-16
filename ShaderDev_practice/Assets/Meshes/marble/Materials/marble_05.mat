@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: marble_05
-  m_Shader: {fileID: 4800000, guid: 37440799eec0840b2b1699bc9a2353c9, type: 3}
+  m_Shader: {fileID: 4800000, guid: a7c1ecd3cc53b8942b2973871d0294d9, type: 3}
   m_ShaderKeywords: _IBLMODE_OFF _LIGHTING_OFF _USENORMAL_OFF
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -40,10 +40,14 @@ Material:
     - _AmbientMode: 0
     - _Detail: 1
     - _Diffuse: 1
+    - _Exposure: 1
+    - _FresnelWidth: 0.3
     - _IBLMode: 0
     - _Lighting: 0
     - _ReflectionExposure: 1
     - _ReflectionFactor: 1
+    - _RefractionFactor: 1
+    - _RefractiveIndex: 1
     - _SpecularFactor: 1
     - _SpecularPower: 100
     - _UseNormal: 0

@@ -8,12 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: globe_moon
-  m_Shader: {fileID: 4800000, guid: 62cc848232c4b4d49802343f31bea790, type: 3}
-  m_ShaderKeywords: _IBLMODE_REFR _LIGHTING_OFF _USENORMAL_OFF
+  m_Shader: {fileID: 4800000, guid: 2403e9075cb5b2b459685582afefb916, type: 3}
+  m_ShaderKeywords: _IBLMODE_REFR _LIGHTING_FRAG _USENORMAL_OFF
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -76,9 +76,10 @@ Material:
     - _DetailNormalMapScale: 1
     - _Diffuse: 1
     - _DstBlend: 0
+    - _Exposure: 1
     - _Glossiness: 0.5
     - _IBLMode: 2
-    - _Lighting: 0
+    - _Lighting: 2
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -86,6 +87,7 @@ Material:
     - _ReflectionExposure: 3.27
     - _ReflectionFactor: 1
     - _RefractionFactor: 1
+    - _RefractiveFactor: 1
     - _RefractiveIndex: 3.4
     - _SpecularFactor: 1
     - _SpecularPower: 100

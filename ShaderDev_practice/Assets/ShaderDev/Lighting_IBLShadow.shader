@@ -1,4 +1,4 @@
-﻿Shader "ShaderDev/18Lighting_IBLRefraction" {
+﻿Shader "ShaderDev/20Lighting_IBLShadow" {
     Properties {
         _Color ("Main Color", Color) = (1,1,1,1)
         _MainTex("Main Texture", 2D) = "white" {}
@@ -12,7 +12,7 @@
         [Toggle] _AmbientMode("Ambient Light?", Float) = 0
         _AmbientFactor("Ambient %", Range(0,1)) = 1
 
-        [KeywordEnum(Off, Refl, Refr)] _IBLMode ("IBL Mode", Float) = 0
+        [KeywordEnum(Off, Refl, Refr, Fres)] _IBLMode ("IBL Mode", Float) = 0
         _ReflectionFactor("Reflection %", Range(0,1)) = 1
 
         _Cube("Cube Map", Cube) = "" {}
@@ -21,6 +21,10 @@
 
         _RefractionFactor("Refraction %", Range(0,1)) = 1
         _RefractiveIndex("Refractive Index", Range(0,50)) = 1
+
+        _FresnelWidth("Fresnel Width", Range(0,1)) = 0.3
+
+        [Toggle] _ShadowMode("Shadow On/Off?", Float) = 0
     }
 
     SubShader {
@@ -28,6 +32,41 @@
             "Queue" = "Transparent" 
             "IgnoreProjector" = "True" 
             "RenderType" = "Transparent"
+        }
+
+        Pass {
+            Name "ShadowCaster"
+            Tags {
+                "Queue" = "Opaque"
+                "LightMode" = "ShadowCaster"
+            }
+            ZWrite On
+            Cull Off
+
+            CGPROGRAM
+                #pragma vertex vert
+                #pragma fragment frag
+
+                struct vertexInput {
+                    float4 vertex : POSITION;
+                };
+
+                struct vertexOutput {
+                    float4 pos : SV_POSITION;
+                };
+
+                vertexOutput vert(vertexInput v) {
+                    vertexOutput o;
+                    UNITY_INITIALIZE_OUTPUT(vertexOutput, o); //necessary for HLSL compilers
+                    o.pos = UnityObjectToClipPos(v.vertex);
+                    return o;
+                }
+
+                float4 frag(vertexOutput i) : SV_TARGET {
+                    return 0;
+                }
+
+            ENDCG
         }
 
         Pass {
@@ -41,7 +80,8 @@
                 #pragma shader_feature _USENORMAL_OFF _USENORMAL_ON
                 #pragma shader_feature _LIGHTING_OFF _LIGHTING_VERT _LIGHTING_FRAG
                 #pragma shader_feature _AMBIENTMODE_OFF _AMBIENTMODE_ON
-                #pragma shader_feature _IBLMODE_OFF _IBLMODE_REFL _IBLMODE_REFR
+                #pragma shader_feature _IBLMODE_OFF _IBLMODE_REFL _IBLMODE_REFR _IBLMODE_FRES
+                #pragma shader_feature _SHADOWMODE_ON _SHADOWMODE_OFF
                 #include "CVGLighting.cginc"
 
                 uniform half4 _Color;
@@ -58,13 +98,13 @@
                 uniform float _SpecularFactor;                
                 uniform float _SpecularPower;
 
-                #if _IBLMODE_REFL || _IBLMODE_REFR
+                #if _IBLMODE_REFL || _IBLMODE_REFR || _IBLMODE_FRES
                     uniform samplerCUBE _Cube;
                     uniform half _Detail;
                     float _Exposure;
                 #endif
 
-                #if _IBLMODE_REFL
+                #if _IBLMODE_REFL || _IBLMODE_FRES
                     float _ReflectionFactor;
                 #endif
                 
@@ -73,8 +113,16 @@
                     uniform float _RefractiveIndex;
                 #endif
 
+                #if _IBLMODE_FRES
+                    uniform float _FresnelWidth;
+                #endif
+
                 #if _AMBIENTMODE_ON
                     uniform float _AmbientFactor;
+                #endif
+
+                #if _SHADOWMODE_ON
+                    sampler2D _ShadowMapTexture;
                 #endif
 
                 struct vertexInput {
@@ -99,9 +147,12 @@
                     #if _LIGHTING_VERT
                         float4 surfaceColor : COLOR0;
                     #else 
-                        #if _IBLMODE_REFL || _IBLMODE_REFR
+                        #if _IBLMODE_REFL || _IBLMODE_REFR || _IBLMODE_FRES
                             float4 surfaceColor : COLOR0;
                         #endif
+                    #endif
+                    #if _SHADOWMODE_ON
+                        float4 shadowCoord : COLOR1;
                     #endif
                 };
 
@@ -113,6 +164,10 @@
                     o.texcoord.xy = (v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw); //x and y coordinates are for tilling. z and w coordinates are for offseting
                     o.normalWorld = float4(normalize(mul(normalize(v.normal.xyz), (float3x3)unity_WorldToObject)), v.normal.w);
                     o.posWorld = mul(unity_ObjectToWorld, v.vertex);
+
+                    #if _SHADOWMODE_ON
+                        o.shadowCoord = ProjectionToTextureSpace(o.pos);
+                    #endif
 
                     #if _USENORMAL_ON
                         // World space T, B, N values
@@ -145,17 +200,14 @@
                             float3 worldRefr = refract(-worldSpaceViewDir, o.normalWorld.xyz, 1/_RefractiveIndex); //last input is eta where we consider the first medium to be vacuum, hence the 1 in the nominator
                             o.surfaceColor.rgb *= IBLRefl(_Cube, _Detail, worldRefr, _Exposure, _RefractionFactor); //here we respect the lighting model so we multiply the result
                         #endif
-                    #else
-                        #if _IBLMODE_REFL
-                            float3 worldSpaceViewDir = normalize(_WorldSpaceCameraPos - o.posWorld);
-                            float3 worldRefl = reflect(-worldSpaceViewDir, o.normalWorld.xyz);
-                            o.surfaceColor.rgb += IBLRefl(_Cube, _Detail, worldRefl, _Exposure, _ReflectionFactor); //here we don't have a lighting model so we add the result
-                        #endif
 
-                        #if _IBLMODE_REFR
-                            float3 worldSpaceViewDir = normalize(_WorldSpaceCameraPos - o.posWorld);
-                            float3 worldRefr = refract(-worldSpaceViewDir, o.normalWorld.xyz, 1/_RefractiveIndex);
-                            o.surfaceColor.rgb += IBLRefl(_Cube, _Detail, worldRefr, _Exposure, _RefractionFactor); //here we don't have a lighting model so we add the result
+                        #if _IBLMODE_FRES
+                            float3 worldRefl = reflect(-worldSpaceViewDir, o.normalWorld.xyz);
+                            float3 reflColor = IBLRefl(_Cube, _Detail, worldRefl, _Exposure, _ReflectionFactor);
+
+                            float fresnel = 1 - saturate(dot(worldSpaceViewDir, o.normalWorld.xyz));
+                            fresnel = smoothstep(1 - _FresnelWidth, 1, fresnel);
+                            o.surfaceColor.rgb = lerp(o.surfaceColor.rgb, o.surfaceColor.rgb * reflColor, fresnel);
                         #endif
                     #endif
                     return o;
@@ -183,6 +235,10 @@
                         float3 mainTexCol = tex2D(_MainTex, i.texcoord.xy);
                         finalColor.rgb += mainTexCol * _Color * diffuseCol + specularCol;
 
+                        #if _SHADOWMODE_ON
+                            finalColor.rgb *= tex2D(_ShadowMapTexture, i.shadowCoord).a;
+                        #endif
+
                         #if _AMBIENTMODE_ON
                             float3 ambientColor = _AmbientFactor * UNITY_LIGHTMODEL_AMBIENT; //built-in variable that can be changed in the lighting section of the scene
                             finalColor.rgb += ambientColor;
@@ -197,8 +253,21 @@
                             float3 worldRefr = refract(-worldSpaceViewDir, worldNormalAtPixel, 1/_RefractiveIndex);
                             finalColor.rgb *= IBLRefl(_Cube, _Detail, worldRefr, _Exposure, _RefractionFactor); //here we respect the lighting model so we multiply the result
                         #endif
+
+                        #if _IBLMODE_FRES
+                            float3 worldRefl = reflect(-worldSpaceViewDir, worldNormalAtPixel);
+                            float3 reflColor = IBLRefl(_Cube, _Detail, worldRefl, _Exposure, _ReflectionFactor);
+
+                            float fresnel = 1 - saturate(dot(worldSpaceViewDir, worldNormalAtPixel));
+                            fresnel = smoothstep(1 - _FresnelWidth, 1, fresnel);
+                            finalColor.rgb = lerp(finalColor.rgb, finalColor.rgb * reflColor, fresnel);
+                        #endif
                     #elif _LIGHTING_VERT
                         finalColor = i.surfaceColor;
+
+                        #if _SHADOWMODE_ON
+                            finalColor.rgb *= tex2D(_ShadowMapTexture, i.shadowCoord).a;
+                        #endif
                     #else
                         #if _IBLMODE_REFL
                             float3 worldSpaceViewDir = normalize(_WorldSpaceCameraPos - i.posWorld);
@@ -210,6 +279,18 @@
                             float3 worldSpaceViewDir = normalize(_WorldSpaceCameraPos - i.posWorld);
                             float3 worldRefr = refract(-worldSpaceViewDir, worldNormalAtPixel, 1/_RefractiveIndex);
                             finalColor.rgb += IBLRefl(_Cube, _Detail, worldRefr, _Exposure, _RefractionFactor); //here we don't have a lighting model so we add the result
+                        #endif
+
+                        #if _IBLMODE_FRES
+                            float3 worldSpaceViewDir = normalize(_WorldSpaceCameraPos - i.posWorld);
+                            float3 worldRefl = reflect(-worldSpaceViewDir, worldNormalAtPixel);
+                            float3 reflColor = IBLRefl(_Cube, _Detail, worldRefl, _Exposure, _ReflectionFactor);
+
+                            float fresnel = 1 - saturate(dot(worldSpaceViewDir, worldNormalAtPixel));
+                            fresnel = smoothstep(1 - _FresnelWidth, 1, fresnel);
+                            float3 mainTexCol = tex2D(_MainTex, i.texcoord.xy);
+
+                            finalColor.rgb = lerp(mainTexCol * _Color.rgb, finalColor.rgb + reflColor, fresnel); //here we add the reflection color because there is no lighting applied in the finalColor
                         #endif
                     #endif
 

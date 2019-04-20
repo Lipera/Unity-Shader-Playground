@@ -111,11 +111,6 @@
                     #endif
                 };
 
-                float3 IBLRefl(samplerCUBE cubeMap, half detail, float3 worldRefl, float exposure, float reflectionFactor) {
-                    float4 cubeMapCol = texCUBElod(cubeMap, float4(worldRefl, detail)).rgba;
-                    return reflectionFactor * cubeMapCol.rgb * (cubeMapCol.a * exposure); 
-                }
-
                 vertexOutput vert(vertexInput v) {
                     vertexOutput o;
                     UNITY_INITIALIZE_OUTPUT(vertexOutput, o); //necessary for HLSL compilers

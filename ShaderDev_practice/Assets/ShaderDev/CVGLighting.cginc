@@ -39,4 +39,21 @@ float3 SpecularBlinnPhong(float3 normalDir, float3 lightDir, float3 worldSpaceVi
     return specularColor * specularFactor * attenuation * pow(max(0, dot(normalDir, halfwayDir)), specularPower);
 }
 
+float3 IBLRefl(samplerCUBE cubeMap, half detail, float3 worldRefl, float exposure, float reflectionFactor) {
+    float4 cubeMapCol = texCUBElod(cubeMap, float4(worldRefl, detail)).rgba;
+    return reflectionFactor * cubeMapCol.rgb * (cubeMapCol.a * exposure); 
+}
+
+inline float4 ProjectionToTextureSpace(float4 pos) { //inline means copying the body of the function at the place of its call
+    float4 textureSpacePos = pos;
+
+    #if defined(UNITY_HALF_TEXEL_OFFSET)
+        textureSpacePos.xy = float2(textureSpacePos.x, textureSpacePos.y * _ProjectionParams.x) + textureSpacePos.w * _ScreenParams.zw;
+    #else
+        textureSpacePos.xy = float2(textureSpacePos.x, textureSpacePos.y * _ProjectionParams.x) + textureSpacePos.w;
+    #endif
+    textureSpacePos.xy = float2(textureSpacePos.x/textureSpacePos.w, textureSpacePos.y/textureSpacePos.w) * 0.5;
+    return textureSpacePos;
+}
+
 #endif

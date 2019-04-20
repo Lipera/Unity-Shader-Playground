@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: _6_stone4Mat
-  m_Shader: {fileID: 4800000, guid: 85423070649c847489ff8a9740a8db4e, type: 3}
+  m_Shader: {fileID: 4800000, guid: 1b968b87337a11a4c880ee71496eebca, type: 3}
   m_ShaderKeywords: _IBLMODE_OFF _LIGHTING_FRAG _SHADOWMODE_ON _USENORMAL_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0

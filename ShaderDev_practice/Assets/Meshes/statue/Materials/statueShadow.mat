@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: statueShadow
-  m_Shader: {fileID: 4800000, guid: 1b968b87337a11a4c880ee71496eebca, type: 3}
-  m_ShaderKeywords: _IBLMODE_REFL _LIGHTING_FRAG _SHADOWMODE_ON _USENORMAL_ON
+  m_Shader: {fileID: 4800000, guid: 041676378db3e5f42b8b319d3b7a5914, type: 3}
+  m_ShaderKeywords: _IBLMODE_REFL _LIGHTING_FRAG _SHADOWMODE_ON _SPECULAR_MAP _USENORMAL_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -67,9 +67,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TangentMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AmbientFactor: 1
     - _AmbientMode: 0
+    - _AnisoU: 1
+    - _AnisoV: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _Detail: 1
@@ -90,6 +96,7 @@ Material:
     - _RefractionFactor: 1
     - _RefractiveIndex: 1
     - _ShadowMode: 1
+    - _Specular: 1
     - _SpecularFactor: 1
     - _SpecularPower: 100
     - _SrcBlend: 1

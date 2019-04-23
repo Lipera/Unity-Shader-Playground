@@ -56,4 +56,26 @@ inline float4 ProjectionToTextureSpace(float4 pos) { //inline means copying the 
     return textureSpacePos;
 }
 
+float AshikhminShirleyPremoze_BRDF(float nU, float nV, float3 tangentDir, float3 normalDir, float3 lightDir, float3 viewDir, float reflectionFactor) {
+    float pi = 3.141592;
+    float3 halfwayVector = normalize(lightDir + viewDir);
+    float3 NdotH = dot(normalDir, halfwayVector);
+    float3 NdotL = dot(normalDir, lightDir);
+    float3 NdotV = dot(normalDir, viewDir);
+    float3 HdotT = dot(halfwayVector, tangentDir);
+    float3 HdotB = dot(halfwayVector, cross(normalDir, tangentDir));
+    float3 VdotH = dot(viewDir, halfwayVector);
+
+    float power = nU * pow(HdotT,2) + nV * pow(HdotB,2);
+    power /= 1.0 - pow(NdotH,2);
+
+    float spec = sqrt((nU + 1) * (nV + 1)) * pow(NdotH, power);
+    spec /= 8.0 * pi * VdotH * max(NdotL, NdotV);
+
+    float Fresnel = reflectionFactor + (1.0 - reflectionFactor) * pow(1-(VdotH),5);
+    spec *= Fresnel;
+
+    return spec;
+}
+
 #endif

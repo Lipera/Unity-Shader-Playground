@@ -2,7 +2,9 @@
     Properties {
         _Color ("Color", Color) = (1,1,1,1)
         _MainTex ("Main Texture", 2D) = "white" {}
-        _RampTex ("Ramp", 2D) = "white" {}
+        [KeywordEnum(Ramp, ShadingLvl, TwoTone)] _ToonMode ("Toon Mode", Float) = 0
+        [HideIfDisabled(_TOONMODE_RAMP)]_RampTex ("Ramp", 2D) = "white" {}
+        [HideIfDisabled(_TOONMODE_SHADINGLVL)]_CelShadingLevels ("Shading levels", Range(0,10)) = 5.5
     }
     SubShader {
         Tags { "RenderType" = "Opaque" }
@@ -11,12 +13,20 @@
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
         #pragma surface surf Toon fullforwardshadows
+        #pragma shader_feature _TOONMODE_RAMP _TOONMODE_SHADINGLVL _TOONMODE_TWOTONE
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
 
         sampler2D _MainTex;
-        sampler2D _RampTex;
+
+        #if _TOONMODE_RAMP
+            sampler2D _RampTex;
+        #endif
+
+        #if _TOONMODE_SHADINGLVL
+            float _CelShadingLevels;
+        #endif
 
         struct Input {
             float2 uv_MainTex;
@@ -32,12 +42,20 @@
             // put more per-instance properties here
         UNITY_INSTANCING_BUFFER_END(Props)
 
-        fixed4 LightingToon(SurfaceOutput s, fixed3 lightDir, fixed atten) {
+        fixed4 LightingToon(SurfaceOutput s, fixed3 lightDir, half3 viewDir, fixed atten) {
             //First calculate the dot product of the lightDir and the surface normal
             half NdotL = dot(s.Normal, lightDir);
-            //Remap NdotL to the value on the ramp map
-            half uvNdotL = NdotL * 0.5 + 0.5;
-            NdotL = tex2D(_RampTex, fixed2(uvNdotL, 0.5));
+
+            #if _TOONMODE_RAMP
+                //Remap NdotL to the value on the ramp map
+                half uvNdotL = NdotL * 0.5 + 0.5;
+                NdotL = tex2D(_RampTex, fixed2(uvNdotL, 0.5));
+            #endif
+
+            #if _TOONMODE_SHADINGLVL
+                //Snap the color
+                NdotL = floor(NdotL * _CelShadingLevels) / (_CelShadingLevels - 0.5);
+            #endif
 
             half4 color;
 

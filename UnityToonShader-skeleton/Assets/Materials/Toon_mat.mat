@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Toon_mat
   m_Shader: {fileID: 4800000, guid: 6a852329b3ac22d4082c307c46da9b53, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _TOONMODE_SHADINGLVL
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -65,6 +65,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
+    - _CelShadingLevels: 5.5
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -80,6 +81,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _ToonMode: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:

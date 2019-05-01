@@ -20,6 +20,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [GeoGebra](https://www.geogebra.org/3d?lang=en) for visualizing 2D and 3D graphs.
 
+- [Dynamic properties extension](https://forum.unity.com/threads/sharing-is-caring-hiding-optional-material-parameters.349952/) for multi compiled shader
+
 #### Blogs / websites / YouTube channels / repositories
 
 - [Alan Zucconi](https://www.alanzucconi.com/)

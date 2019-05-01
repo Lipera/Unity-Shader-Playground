@@ -44,7 +44,7 @@
 
         fixed4 LightingToon(SurfaceOutput s, fixed3 lightDir, half3 viewDir, fixed atten) {
             //First calculate the dot product of the lightDir and the surface normal
-            half NdotL = dot(s.Normal, lightDir);
+            half NdotL = saturate(dot(s.Normal, lightDir));
 
             #if _TOONMODE_RAMP
                 //Remap NdotL to the value on the ramp map

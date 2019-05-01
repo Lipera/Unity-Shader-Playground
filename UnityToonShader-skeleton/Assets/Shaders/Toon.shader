@@ -3,8 +3,8 @@
         _Color ("Color", Color) = (1,1,1,1)
         _MainTex ("Main Texture", 2D) = "white" {}
         [KeywordEnum(Ramp, ShadingLvl, TwoTone)] _ToonMode ("Toon Mode", Float) = 0
-        [HideIfDisabled(_TOONMODE_RAMP)]_RampTex ("Ramp", 2D) = "white" {}
-        [HideIfDisabled(_TOONMODE_SHADINGLVL)]_CelShadingLevels ("Shading levels", Range(0,10)) = 5.5
+        [ShowIf(_TOONMODE_RAMP)]_RampTex ("Ramp", 2D) = "white" {}
+        [ShowIf(_TOONMODE_SHADINGLVL)]_CelShadingLevels ("Shading levels", Range(0,10)) = 5.5
     }
     SubShader {
         Tags { "RenderType" = "Opaque" }

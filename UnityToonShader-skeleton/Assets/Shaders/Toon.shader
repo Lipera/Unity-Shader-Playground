@@ -5,6 +5,13 @@
         [KeywordEnum(Ramp, ShadingLvl, TwoTone)] _ToonMode ("Toon Mode", Float) = 0
         [ShowIf(_TOONMODE_RAMP)]_RampTex ("Ramp", 2D) = "white" {}
         [ShowIf(_TOONMODE_SHADINGLVL)]_CelShadingLevels ("Shading levels", Range(0,10)) = 5.5
+
+		[HDR]_SpecularColor("Specular Color", Color) = (0.9,0.9,0.9,1)
+		_Glossiness("Glossiness", Float) = 32
+
+		[HDR]_RimColor("Rim Color", Color) = (1,1,1,1)
+		_RimAmount("Rim Amount", Range(0, 1)) = 0.716
+		_RimThreshold("Rim Threshold", Range(0, 1)) = 0.1
     }
     SubShader {
         Tags { "RenderType" = "Opaque" }
@@ -19,6 +26,11 @@
         #pragma target 3.0
 
         sampler2D _MainTex;
+        float4 _SpecularColor;
+        float _Glossiness;
+        float4 _RimColor;
+        float _RimAmount;
+        float _RimThreshold;
 
         #if _TOONMODE_RAMP
             sampler2D _RampTex;
@@ -45,21 +57,32 @@
         fixed4 LightingToon(SurfaceOutput s, fixed3 lightDir, half3 viewDir, fixed atten) {
             //First calculate the dot product of the lightDir and the surface normal
             half NdotL = saturate(dot(s.Normal, lightDir));
+            float3 halfVector = normalize(lightDir + viewDir);
+            half NdotH = saturate(dot(s.Normal, halfVector));
+            float lightIntensity;
 
             #if _TOONMODE_RAMP
                 //Remap NdotL to the value on the ramp map
                 half uvNdotL = NdotL * 0.5 + 0.5;
-                NdotL = tex2D(_RampTex, fixed2(uvNdotL, 0.5));
+                lightIntensity = tex2D(_RampTex, fixed2(uvNdotL, 0.5));
             #endif
 
             #if _TOONMODE_SHADINGLVL
                 //Snap the color
-                NdotL = floor(NdotL * _CelShadingLevels) / (_CelShadingLevels - 0.5);
+                lightIntensity = floor(NdotL * _CelShadingLevels) / (_CelShadingLevels - 0.5);
+            #endif
+
+            #if _TOONMODE_TWOTONE
+                lightIntensity = smoothstep(0, 0.01, NdotL);
             #endif
 
             half4 color;
+            float specularIntensity = pow(NdotH, _Glossiness);
+            float specularIntensitySmooth = smoothstep(0.005, 0.01, specularIntensity);
+            float4 specular = specularIntensitySmooth * _SpecularColor;
 
-            color.rgb = s.Albedo * _LightColor0.rgb * (NdotL * atten);
+            color.rgb = s.Albedo * lightIntensity + specular;
+            color.rgb *= atten * _LightColor0.rgb;
             color.a = s.Alpha;
 
             return color;

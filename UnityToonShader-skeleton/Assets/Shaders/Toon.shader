@@ -81,8 +81,7 @@
             float specularIntensitySmooth = smoothstep(0.005, 0.01, specularIntensity);
             float4 specular = specularIntensitySmooth * _SpecularColor;
 
-            color.rgb = s.Albedo * lightIntensity + specular;
-            color.rgb *= atten * _LightColor0.rgb;
+            color.rgb = (s.Albedo * lightIntensity * _LightColor0.rgb + specular) * atten;
             color.a = s.Alpha;
 
             return color;

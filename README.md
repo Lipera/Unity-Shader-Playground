@@ -16,9 +16,11 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 #### Auxiliary material for shader programming
 
-- [Desmos Graph](https://www.desmos.com/calculator) for visualizing 2D graphs.
+- [Desmos Graph](https://www.desmos.com/calculator) for visualizing 2D graphs
 
-- [GeoGebra](https://www.geogebra.org/3d?lang=en) for visualizing 2D and 3D graphs.
+- [GeoGebra](https://www.geogebra.org/3d?lang=en) for visualizing 2D and 3D graphs
+
+- [Dynamic properties extension](https://forum.unity.com/threads/sharing-is-caring-hiding-optional-material-parameters.349952/) for multi compiled shader
 
 #### Blogs / websites / YouTube channels / repositories
 

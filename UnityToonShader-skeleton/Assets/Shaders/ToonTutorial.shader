@@ -6,11 +6,9 @@
 		_MainTex("Main Texture", 2D) = "white" {}	
 		[HDR] //The [HDR] attribute specifies that this color property can have its values set beyond 0 and 1. Any light unity has its colors beyond 0 and 1.
 		_AmbientColor("Ambient Color", Color) = (0.4,0.4,0.4,1)
-		[HDR]
-		_SpecularColor("Specular Color", Color) = (0.9,0.9,0.9,1)
+		[HDR] _SpecularColor("Specular Color", Color) = (0.9,0.9,0.9,1)
 		_Glossiness("Glossiness", Float) = 32
-		[HDR]
-		_RimColor("Rim Color", Color) = (1,1,1,1)
+		[HDR] _RimColor("Rim Color", Color) = (1,1,1,1)
 		_RimAmount("Rim Amount", Range(0, 1)) = 0.716
 		_RimThreshold("Rim Threshold", Range(0, 1)) = 0.1
 	}

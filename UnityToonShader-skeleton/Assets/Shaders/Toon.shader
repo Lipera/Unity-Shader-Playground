@@ -7,7 +7,7 @@
         [ShowIf(_TOONMODE_SHADINGLVL)]_CelShadingLevels ("Shading levels", Range(0,10)) = 5.5
 
 		[HDR]_SpecularColor("Specular Color", Color) = (0.9,0.9,0.9,1)
-		_Glossiness("Glossiness", Float) = 32
+		_Glossiness("Glossiness", Range(0,30)) = 10
 
 		[HDR]_RimColor("Rim Color", Color) = (1,1,1,1)
 		_RimAmount("Rim Amount", Range(0, 1)) = 0.716
@@ -77,11 +77,12 @@
             #endif
 
             half4 color;
-            float specularIntensity = pow(NdotH, _Glossiness);
+            float specularIntensity = pow(NdotH * lightIntensity, _Glossiness * _Glossiness);
             float specularIntensitySmooth = smoothstep(0.005, 0.01, specularIntensity);
             float4 specular = specularIntensitySmooth * _SpecularColor;
 
-            color.rgb = (s.Albedo * lightIntensity * _LightColor0.rgb + specular) * atten;
+            float4 diffuse = lightIntensity * _LightColor0;
+            color.rgb = s.Albedo * (diffuse + specular) * atten;
             color.a = s.Alpha;
 
             return color;

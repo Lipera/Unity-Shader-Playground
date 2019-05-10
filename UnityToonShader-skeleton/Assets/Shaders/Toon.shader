@@ -2,12 +2,13 @@
     Properties {
         _Color ("Color", Color) = (1,1,1,1)
         _MainTex ("Main Texture", 2D) = "white" {}
+        _BumpMap ("Bumpmap", 2D) = "bump" {}
         [KeywordEnum(Ramp, ShadingLvl, TwoTone)] _ToonMode ("Toon Mode", Float) = 0
         [ShowIf(_TOONMODE_RAMP)]_RampTex ("Ramp", 2D) = "white" {}
         [ShowIf(_TOONMODE_SHADINGLVL)]_CelShadingLevels ("Shading levels", Range(0,10)) = 5.5
 
 		[HDR]_SpecularColor("Specular Color", Color) = (0.9,0.9,0.9,1)
-		_Glossiness("Glossiness", Range(0,30)) = 10
+		_Glossiness("Glossiness", Range(0,100)) = 10
 
 		[HDR]_RimColor("Rim Color", Color) = (1,1,1,1)
 		_RimAmount("Rim Amount", Range(0, 1)) = 0.716
@@ -26,6 +27,7 @@
         #pragma target 3.0
 
         sampler2D _MainTex;
+        sampler2D _BumpMap;
         float4 _SpecularColor;
         float _Glossiness;
         float4 _RimColor;
@@ -42,6 +44,7 @@
 
         struct Input {
             float2 uv_MainTex;
+            float2 uv_BumpMap;
             float2 uv_RampTex;
         };
 
@@ -93,6 +96,7 @@
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
             o.Albedo = c.rgb;
             o.Alpha = c.a;
+            o.Normal = UnpackNormal (tex2D (_BumpMap, IN.uv_BumpMap));
         }
         ENDCG
     }

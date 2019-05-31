@@ -24,6 +24,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Custom graph nodes tutorial](https://connect.unity.com/p/getting-light-information-with-a-custom-node-in-shadergraph)
 
+- [Effect Texture Maker](https://mebiusbox.github.io/contents/EffectTextureMaker/)
+
 #### Blogs / websites / YouTube channels / repositories
 
 - [Alan Zucconi](https://www.alanzucconi.com/)

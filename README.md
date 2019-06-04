@@ -28,6 +28,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Gif optimizer](https://ezgif.com/optimize)
 
+- [Screen to gif](https://www.screentogif.com/)
+
 #### Blogs / websites / YouTube channels / repositories
 
 - [Alan Zucconi](https://www.alanzucconi.com/)

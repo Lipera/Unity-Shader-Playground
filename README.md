@@ -14,17 +14,19 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 ## Cool References
 
-#### Auxiliary material for shader programming
-
-- [Desmos Graph](https://www.desmos.com/calculator) for visualizing 2D graphs
-
-- [GeoGebra](https://www.geogebra.org/3d?lang=en) for visualizing 2D and 3D graphs
-
-- [Dynamic properties extension](https://forum.unity.com/threads/sharing-is-caring-hiding-optional-material-parameters.349952/) for multi variant shaders
+#### Auxiliary material
 
 - [Custom graph nodes tutorial](https://connect.unity.com/p/getting-light-information-with-a-custom-node-in-shadergraph)
 
+- [Desmos Graph](https://www.desmos.com/calculator) for visualizing 2D graphs
+
+- [Dynamic properties extension](https://forum.unity.com/threads/sharing-is-caring-hiding-optional-material-parameters.349952/) for multi variant shaders
+
 - [Effect Texture Maker](https://mebiusbox.github.io/contents/EffectTextureMaker/)
+
+- [GeoGebra](https://www.geogebra.org/3d?lang=en) for visualizing 2D and 3D graphs
+
+- [Gif optimizer](https://ezgif.com/optimize)
 
 #### Blogs / websites / YouTube channels / repositories
 

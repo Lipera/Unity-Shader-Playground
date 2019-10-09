@@ -76,6 +76,8 @@ I recommend following all of these amazing people on twitter since they post int
 
 - [Unity 2018 Shader and Effects Cookbook](https://www.amazon.com/Unity-2018-Shaders-Effects-Cookbook/dp/1788396235)
 
+- [Wiki Books CG Programming](https://en.wikibooks.org/wiki/Cg_Programming)
+
 #### Communities
 
 - [Real-Time VFX community](https://realtimevfx.com)

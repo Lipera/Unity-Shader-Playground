@@ -54,6 +54,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Minions Art Patreon](https://www.patreon.com/posts/how-i-got-with-19042499)
 
+- [Render Hell](https://simonschreibt.de/gat/renderhell/)
+
 - [Ronja's Tutorials](https://ronja-tutorials.tumblr.com/tagged/tutorial/chrono)
 
 - [Roystan Shader Tutorials and misc](https://roystan.net)

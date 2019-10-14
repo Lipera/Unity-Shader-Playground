@@ -62,6 +62,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Repository with all sorts of references](https://github.com/sindresorhus/awesome)
 
+- [Sebastian Lague's Youtube Channel](https://www.youtube.com/watch?v=4QOcCGI6xOU&t=129s)
+
 - [Technical Artist Chayan Vinayak Goswami's Youtube Channel](https://www.youtube.com/channel/UCwtWCujRCWK9ba3f474sTOQ)
 
 I recommend following all of these amazing people on twitter since they post interesting stuff and have cool discussions.

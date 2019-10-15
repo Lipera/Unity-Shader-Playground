@@ -24,6 +24,8 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Effect Texture Maker](https://mebiusbox.github.io/contents/EffectTextureMaker/)
 
+- [Essence of Linear Algebra series by 3Blue1Brown](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) 
+
 - [GeoGebra](https://www.geogebra.org/3d?lang=en) for visualizing 2D and 3D graphs
 
 - [Gif optimizer](https://ezgif.com/optimize)

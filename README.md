@@ -58,7 +58,9 @@ There are simple properties exploration, textures manipulation, lighting models,
 
 - [Render Hell](https://simonschreibt.de/gat/renderhell/)
 
-- [Ronja's Tutorials](https://ronja-tutorials.tumblr.com/tagged/tutorial/chrono)
+- [Ronja's Tutorials Website](https://www.ronja-tutorials.com/)
+
+- [Ronja's Tutorials Tumblr](https://ronja-tutorials.tumblr.com/tagged/tutorial/chrono)
 
 - [Roystan Shader Tutorials and misc](https://roystan.net)
 
